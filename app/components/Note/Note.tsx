@@ -8,7 +8,6 @@ type props = {
 }
 const Note: React.FC<props> = ({ noteId, note }) => {
   const { title, content, updateTime } = note
-  console.log('Note components');
 
   return (
     <div className="note">

@@ -31,7 +31,6 @@ export async function getAllNotes(): Promise<NotesHash> {
 	for (const [key, value] of Object.entries(updatedData)) {
 		notes[key] = JSON.parse(value);
 	}
-	console.log(updatedData, 'notes');
 
 	return notes;
 }

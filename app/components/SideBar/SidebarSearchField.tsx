@@ -1,15 +1,21 @@
 'use client'
 
 import { usePathname, useRouter } from "next/navigation";
-import { useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import Spinner from '@/components/SideBar/Spinner'
+import { useTranslation } from "@/i18n/client"
 
-
-const SidebarSearchField = () => {
-
+const SidebarSearchField = (props: { lng: string }) => {
+  const { lng } = props;
   const { replace } = useRouter();
   const pathName = usePathname();
   const [isPending, startTransition] = useTransition()
+  const { t } = useTranslation(lng, 'basic')
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleSearch = (term: string) => {
 
@@ -32,7 +38,7 @@ const SidebarSearchField = () => {
       </label>
       <input
         id="sidebar-search-input"
-        placeholder="Search"
+        placeholder={isClient ? t('search') : 'search'}
         type="text"
         onChange={(e) => handleSearch(e.target.value)}
       />
