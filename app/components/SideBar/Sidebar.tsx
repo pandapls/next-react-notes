@@ -1,14 +1,12 @@
 import React, { Suspense } from 'react'
 import Link from 'next/link'
 import SidebarNoteList from './SidebarNoteList'
-import { getAllNotes } from '@/lib/redis';
 import EditButton from '@/components/Button/EditButton';
 import NoteListSkeleton from '@/components/Note/NoteListSkeleton';
 import SidebarSearchField from './SidebarSearchField';
 
-export default async function Sidebar() {
-  const notes = await getAllNotes()
-
+export default async function Sidebar(props: { lng: string }) {
+  const { lng } = props
   return (
     <>
       <section className="col sidebar">
@@ -27,8 +25,8 @@ export default async function Sidebar() {
         </Link>
         <section className="sidebar-menu" role="menubar">
           {/* SideSearchField */}
-          <SidebarSearchField />
-          <EditButton noteId={''}>New</EditButton>
+          <SidebarSearchField lng={lng} />
+          <EditButton noteId={''}>+</EditButton>
 
         </section>
         <nav>

@@ -7,7 +7,6 @@ export type NoteProps = {
 }
 const SidebarNoteItem = (props: NoteProps) => {
   const { id, note: { title, updateTime, content } } = props;
-  console.log(content, 'content');
 
   return (
     <SidebarNoteItemContent

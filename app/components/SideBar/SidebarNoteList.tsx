@@ -7,7 +7,6 @@ import SidebarNoteItemHeader from './SidebarNoteItemHeader';
 export default async function SidebarNoteList() {
   await sleep(1000);
   const notes = await getAllNotes();
-  console.log(notes, 'notes');
 
   if (Object.entries(notes).length === 0) {
     return <div className="notes-empty">
