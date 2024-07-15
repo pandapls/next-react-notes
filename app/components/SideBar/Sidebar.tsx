@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react'
 import Link from 'next/link'
-import SidebarNoteList from './SidebarNoteList'
+import SidebarNoteList from '@/components/SideBar/SidebarNoteList'
 import EditButton from '@/components/Button/EditButton';
 import NoteListSkeleton from '@/components/Note/NoteListSkeleton';
-import SidebarSearchField from './SidebarSearchField';
+import SidebarSearchField from '@/components/SideBar/SidebarSearchField';
+import SidebarImport from '@/components/SideBar/SidebarImport';
 
 export default async function Sidebar(props: { lng: string }) {
   const { lng } = props
@@ -27,7 +28,6 @@ export default async function Sidebar(props: { lng: string }) {
           {/* SideSearchField */}
           <SidebarSearchField lng={lng} />
           <EditButton noteId={''}>+</EditButton>
-
         </section>
         <nav>
           {/* SidebarNoteList */}
@@ -35,6 +35,7 @@ export default async function Sidebar(props: { lng: string }) {
             <SidebarNoteList />
           </Suspense>
         </nav>
+        <SidebarImport />
       </section>
     </>
   )

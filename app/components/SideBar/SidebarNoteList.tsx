@@ -1,8 +1,7 @@
 import { getAllNotes } from '@/lib/redis'
 import { sleep } from '@/lib/utils';
-import SidebarNoteListFilter from './SidebarNoteListFilter';
-import SidebarNoteItemHeader from './SidebarNoteItemHeader';
-
+import SidebarNoteListFilter from '@/components/SideBar/SidebarNoteListFilter';
+import SidebarNoteItemHeader from '@/components/SideBar/SidebarNoteItemHeader';
 
 export default async function SidebarNoteList() {
   await sleep(1000);

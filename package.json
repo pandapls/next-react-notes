@@ -16,6 +16,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "ioredis": "^5.4.1",
     "marked": "^13.0.2",
+    "mime": "^4.0.4",
     "negotiator": "^0.6.3",
     "next": "14.2.5",
     "react": "^18",

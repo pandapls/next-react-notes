@@ -1,0 +1,23 @@
+###### Ts 开发环境需要
+
++ npm install @types/node -D
+
++ npm install ts-node -g
+
+与webpack一起用
+
+npm install webpack ts-loader typescript webpack-cli --save-dev
+
+React + loader
+
+@types/react @types/react-dom
+
+yarn add babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript 
+
+Vue + loader
+
+npm i vue@next --save
+
+npm i -D @vue/compiler-sfc
+
+npm i vue-loader --save-dev
