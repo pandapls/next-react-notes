@@ -2,7 +2,7 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextResponse } from 'next/server'
-import { locales, defaultLocale } from '@/config'
+import { locales, defaultLocale } from '@/root/config'
 
 const publicFile = /\.(.*)$/
 const excludeFile = ['logo.svg']

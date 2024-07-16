@@ -1,0 +1,21 @@
+service: next-react-notes
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+
+functions:
+  next:
+    handler: next.handler
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+
+plugins:
+  - serverless-next.js
+
+custom:
+  serverless-next.js:
+    basePath: /app  # 配置基础路径
+    assetsBucketName: nextjs-app-assets
