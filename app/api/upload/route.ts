@@ -1,11 +1,11 @@
+import { addNote } from '@/lib/redis';
 import { isFileWithCode } from '@/lib/utils';
 import dayjs from 'dayjs';
-import { mkdir, stat, writeFile } from 'fs/promises';
+import { mkdir,stat,writeFile } from 'fs/promises';
 import mime from 'mime';
 import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import { join } from 'path';
-import { addNote } from '../../lib/redis';
 
 const POST = async (req: NextRequest) => {
 	const formData = await req.formData();
