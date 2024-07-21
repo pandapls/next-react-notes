@@ -1,6 +1,6 @@
 'use server';
 
-import { addNote, delNote, updateNote } from '@/lib/redis';
+import { addNote, delNote, updateNote } from '@/lib/strapi';
 import { sleep } from '@/lib/utils';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -45,12 +45,12 @@ const saveNote = async (prevState: SaveNoteResult, formData: FormData) => {
 
 	await sleep(2000);
 	if (noteId) {
-		updateNote(noteId, data);
+		updateNote<NoteData>(noteId, data);
 		revalidatePath('/', 'layout');
 		return { msg: 'Add Success!', errors: null };
 	}
 
-	const res = await addNote(data);
+	const res = await addNote<NoteData>(data);
 	if (!res) {
 		return { msg: 'Add Fail!', errors: null };
 	}
@@ -66,7 +66,6 @@ const deletNode = async (prevState: SaveNoteResult, formData: FormData) => {
 	delNote(noteId);
 	revalidatePath('/', 'layout');
 	redirect('/');
-	return { msg: 'Delete Success!', errors: null };
 };
 
-export { deletNode, saveNote };
+export { deletNode,saveNote };

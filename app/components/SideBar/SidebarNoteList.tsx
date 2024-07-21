@@ -1,5 +1,5 @@
-import { getAllNotes } from '@/lib/redis'
-// import { getAllNotes } from '@/lib/strapi'
+// import { getAllNotes } from '@/lib/redis'
+import { getAllNotes } from '@/lib/strapi'
 import { sleep } from '@/lib/utils';
 import SidebarNoteListFilter from '@/components/SideBar/SidebarNoteListFilter';
 import SidebarNoteItemHeader from '@/components/SideBar/SidebarNoteItemHeader';

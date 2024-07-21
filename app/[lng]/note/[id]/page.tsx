@@ -1,6 +1,5 @@
 import Note from '@/components/Note/Note'
-import { getNote } from '@/lib/redis';
-import { sleep } from '@/lib/utils';
+import { getNote } from '@/lib/strapi';
 import { NextPage } from 'next';
 
 // 定义 props 类型
@@ -14,8 +13,6 @@ const Page: NextPage<NotePageProps> = async ({ params }) => {
   const noteId = params.id;
   const note = await getNote(noteId)
 
-  // 为了让 Suspense 的效果更明显
-  // await sleep(1000);
 
   if (note == null) {
     return (

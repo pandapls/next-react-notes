@@ -1,5 +1,5 @@
 import NoteEditor from '@/components/Edit/NoteEditor';
-import { getNote } from '@/lib/redis';
+import { getNote } from '@/lib/strapi';
 import { sleep } from '@/lib/utils';
 import { NextPage } from 'next';
 
