@@ -19,6 +19,7 @@ interface NotePreviewProps {
   children: string;
 }
 const NotePreview: React.FC<NotePreviewProps> = ({ children }) => {
+
   const md = marked(children);
   const sanitizedHtml = sanitizeHtml(md as string, {
     allowedTags,

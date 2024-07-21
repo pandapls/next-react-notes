@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import NotePreview from '@/components/Note/NotePreview'
 import EditButton from '@/components/Button/EditButton'
-import { Note } from '@/lib/redis';
+import type { Note } from '@/lib/redis';
 type props = {
   noteId: string,
   note: Note

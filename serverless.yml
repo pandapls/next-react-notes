@@ -15,6 +15,11 @@ functions:
 plugins:
   - serverless-next.js
 
+package:
+  include:
+    - .next/standalong           # 包含 Next.js 打包生成的文件
+    # - serverless.js      # Lambda 函数入口文件
+
 custom:
   serverless-next.js:
     basePath: /app  # 配置基础路径

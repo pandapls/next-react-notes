@@ -1,6 +1,9 @@
 import React from "react";
 import { useFormStatus } from "react-dom";
 import { FormData } from '@/actions/editNode'
+import Image from 'next/image';
+
+
 type SaveButtonProps = {
   formAction: (payload: FormData) => void
 }
@@ -16,7 +19,8 @@ const SaveButton: React.FC<SaveButtonProps> = (props) => {
       role='menuitem'
       formAction={formAction}
     >
-      <img src="/checkmark.svg" width="14px" height="10px" alt="" role='presentation' />
+      <Image src="/checkmark.svg" width={14} height={14} alt="" role='presentation' />
+
       {pending ? 'Saving' : 'Done'}
     </button>
   )

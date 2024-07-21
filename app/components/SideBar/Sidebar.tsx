@@ -5,6 +5,7 @@ import EditButton from '@/components/Button/EditButton';
 import NoteListSkeleton from '@/components/Note/NoteListSkeleton';
 import SidebarSearchField from '@/components/SideBar/SidebarSearchField';
 import SidebarImport from '@/components/SideBar/SidebarImport';
+import Image from 'next/image';
 
 export default async function Sidebar(props: { lng: string }) {
   const { lng } = props
@@ -13,14 +14,8 @@ export default async function Sidebar(props: { lng: string }) {
       <section className="col sidebar">
         <Link href={'/'} className="link--unstyled">
           <section className="sidebar-header">
-            <img
-              className="logo"
-              src="/logo.svg"
-              width="22px"
-              height="20px"
-              alt=""
-              role="presentation"
-            />
+            <Image className="logo" src="/logo.svg" width={22} height={20} alt="" role='presentation' />
+
             <strong>React Notes</strong>
           </section>
         </Link>

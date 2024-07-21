@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormStatus } from "react-dom";
 import { FormData } from '@/actions/editNode'
-
+import Image from 'next/image';
 type DeleteButtonProps = {
   formAction: (payload: FormData) => void
   isDraft: boolean
@@ -18,7 +18,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = (props) => {
       role='menuitem'
       formAction={formAction}
     >
-      <img src="/cross.svg" width="10px" height="10px" alt="" role='presentation' />
+      <Image src="/cross.svg" width={10} height={10} alt="" role='presentation' />
       Delete
     </button>
   )

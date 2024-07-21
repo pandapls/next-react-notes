@@ -2,6 +2,8 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import { ReactNode, useState, useRef, useEffect, useTransition } from 'react';
+import Image from 'next/image';
+
 type SidebarNoteItemContentProps = {
   id: string,
   title: string,
@@ -78,14 +80,11 @@ const SidebarNoteItemContent: React.FC<React.PropsWithChildren<SidebarNoteItemCo
         }}
       >
         {isExpanded ? (
-          <img
-            src="/chevron-down.svg"
-            width="10px"
-            height="10px"
-            alt="Collapse"
-          />
+          <Image src="/chevron-down.svg" width={10} height={10} alt="" role='presentation' />
+
         ) : (
-          <img src="/chevron-up.svg" width="10px" height="10px" alt="Expand" />
+            <Image src="/chevron-up.svg" width={10} height={10} alt="" role='Expand' />
+
         )}
       </button>
       {isExpanded && expandedChildren}
